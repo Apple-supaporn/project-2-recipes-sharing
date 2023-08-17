@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Edit Page</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <h1>Edit Recipe Page</h1>
+    <form action="/recipes/<%=recipe.id%>?_method=PUT" method="POST">
+        Recipe Title: <input type="text" name="title" value="<%= recipe.title %>"><br>
+        Cuisine Type: <input type="text" name="cuisine_type" value="<%= recipe.cuisine_type %>"><br>
+        Description: <input type="text" name="description" value="<%= recipe.description %>"><br>
+        Prep Time: <input type="text" name="prep_time" value="<%= recipe.prep_time %>"> mins<br>
+        Cook Time: <input type="text" name="cook_time" value="<%= recipe.cook_time %>"> mins<br>
+        Total Time: <input type="text" name="total_time" value="<%= recipe.total_time %>"> mins<br>
+        Servings: <input type="text" name="servings" value="<%= recipe.servings %>"><br>
+        Ingredients: <input type="text" name="ingredients" value="<%= recipe.ingredients %>"><br>
+        Instructions: <input type="text" name="instructions" value="<%= recipe.instructions %>"><br>
+        Photo: <input required type="text" name="img" value="<%= recipe.img %>"><br>
+        <input type="submit" value="Submit Change"><br>
+    </form>
+        <br><br><a href="/recipes">Back to Recipes Index</a>
+</body>
+</html>
