@@ -1,5 +1,8 @@
 body {
-    background-color: pink;
+    background-color: white;
+}
+h1 {
+    text-align: center;
 }
 
 .recipe-list {
@@ -14,7 +17,7 @@ body {
 .recipe-item {
     margin: 15px;
     padding: 0px;
-    border: 1px solid #ff0000;
+    border: 1px solid rgb(231, 231, 231);
     background-color: #ff9494;
     text-align: center;
     box-sizing: border-box;
@@ -43,14 +46,34 @@ body {
 
 .recipe-details {
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     left: 0;
     right: 0;
-    height: 15%;
-    padding: 5px;
+    height: 12%;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .cuisine-type {
     color: gray;
+}
+
+header {
+    background-color: rgb(234, 234, 234);
+    padding: 2.5% 0;
+}
+
+.header-list {
+    display: flex;
+    justify-content: start;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header-list li {
+    margin: 0 10px;
 }

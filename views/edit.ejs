@@ -6,7 +6,7 @@
     <title>Recipe Edit Page</title>
 </head>
 <body>
-    <%- include('./partials/nav') %>
+    <%- include('./partials/header') %>
     <h1>Edit Recipe Page</h1>
     <form action="/recipes/<%=recipe.id%>?_method=PUT" method="POST">
         Recipe Title: <input type="text" name="title" value="<%= recipe.title %>"><br>

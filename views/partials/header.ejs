@@ -1,6 +1,6 @@
-<nav>
-    <ul>
-        <li><a href="/recipes/new">Create new Recipe</a></li>
+<header>
+    <!-- <h1 class="header-websitename">SpiceMe</h1> -->
+    <ul class="header-list">
         <% if (currentUser) { %>
         <li>Welcome <%= currentUser.username %></li>
         <li>
@@ -9,8 +9,9 @@
             </form>
         </li>
         <% } else { %>
-        <li><a href="/users/new">Sign up</a></li>
-        <li><a href="/sessions/new">Log in</a></li>
+        <li><a href="/sessions/new">Log in </a></li>
+        <li><a href="/users/new">Sign up </a></li>
         <% } %>
+        <li><a href="/recipes/new">Create new Recipe</a></li>
     </ul>
-</nav>
+</header>
