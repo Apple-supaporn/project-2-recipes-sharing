@@ -11,14 +11,25 @@
     <form action="/recipes" method="POST">
         Recipe Title: <input required type="text" name="title"><br>
         Cuisine Type: <input required type="text" name="cuisine_type"><br>
-        Description: <input required type="text" name="description"><br>
+        Description: <textarea rows="5" cols="40" required type="text" name="description"></textarea><br>
         Prep Time: <input required type="text" name="prep_time"> mins<br>
         Cook Time: <input required type="text" name="cook_time"> mins<br>
         Total Time: <input required type="text" name="total_time"> mins<br>
-        Servings: <input required type="text" name="servings"><br>
-        Ingredients: <input required type="text" name="ingredients"><br>
-        Instructions: <input required type="text" name="instructions"><br>
-        Photo: <input required type="text" name="img"><br>
+        
+        <!-- Servings Input -->
+        Servings: <input required type="number" name="servings_amount">
+        <select name="servings_type">
+            <option value="people">People</option>
+            <option value="bars">Bars</option>
+            <option value="pieces">Pieces</option>
+            <!-- Add more options as needed -->
+        </select><br>
+
+
+
+        Ingredients: <textarea rows="5" cols="40" required type="text" name="ingredients"></textarea><br>
+        Instructions: <textarea rows="5" cols="40" required type="text" name="instructions"></textarea><br>
+        Photo: <textarea rows="5" cols="40" type="text" name="img"></textarea><br>
         <input type="submit" value="Create Recipe"><br>
         <nav>
             <a href="/recipes">Back to Recipes Index</a>

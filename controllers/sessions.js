@@ -11,19 +11,6 @@ router.get('/new', (req, res) => {
 
 
 router.post('/', async (req, res) => {
-    //username is found and password matches!
-    //successful log in
-
-    //ERROR: If no user is found, they don't exist OR they spelled wrong
-    //unsuccessful login  
-
-    //ERROR: Password doesn't match || Username doesn't match
-    //unsuccessful login
-
-    //ERROR: Random unexpected error
-    //unsuccessful login
-
-    //try to do this thing
     try {
         const foundUser = await User.findOne({ username: req.body.username })
         if (!foundUser) {

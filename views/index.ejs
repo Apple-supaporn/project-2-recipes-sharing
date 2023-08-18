@@ -9,16 +9,20 @@
 <body>
     <%- include('./partials/nav') %>
     <h1> Recipes Index Page </h1>
-    <ul class="recipes-list">
+    <ul class="recipe-list">
         <% for(let i = 0; i < recipes.length; i++) { %>
             <li class="recipe-item">
                 <a href="/recipes/<%=recipes[i].id %>">
                     <div class="recipe-image">
                         <img src="<%=recipes[i].img %>" alt="<%=recipes[i].title %>">
                     </div>
-                    <div class="recipe-title">
-                        <%=recipes[i].title %><br>
-                        <%=recipes[i].cuisine_type %>
+                    <div class="recipe-details">
+                        <div class="recipe-title">
+                            <%=recipes[i].title %>
+                        </div>
+                        <div class="cuisine-type">
+                            <%=recipes[i].cuisine_type %>
+                        </div>
                     </div>
                 </a>
             </li>

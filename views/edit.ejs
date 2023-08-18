@@ -15,7 +15,18 @@
         Prep Time: <input type="text" name="prep_time" value="<%= recipe.prep_time %>"> mins<br>
         Cook Time: <input type="text" name="cook_time" value="<%= recipe.cook_time %>"> mins<br>
         Total Time: <input type="text" name="total_time" value="<%= recipe.total_time %>"> mins<br>
-        Servings: <input type="text" name="servings" value="<%= recipe.servings %>"><br>
+
+
+        Servings: <input type="number" name="servings_amount" value="<%= recipe.servings_amount %>">
+        <select name="servings_type">
+        <option value="people" <%= recipe.servings_type === 'people' ? 'selected' : '' %>>People</option>
+        <option value="bars" <%= recipe.servings_type === 'bars' ? 'selected' : '' %>>Bars</option>
+        <option value="pieces" <%= recipe.servings_type === 'pieces' ? 'selected' : '' %>>Pieces</option>
+        <!-- Add more options as needed -->
+        </select><br>
+
+
+
         Ingredients: <input type="text" name="ingredients" value="<%= recipe.ingredients %>"><br>
         Instructions: <input type="text" name="instructions" value="<%= recipe.instructions %>"><br>
         Photo: <input required type="text" name="img" value="<%= recipe.img %>"><br>
