@@ -37,9 +37,10 @@ db.on('disconnected', () => console.log('mongo disconnected'))
 
 
 app.get('/', (req, res) => {
-    res.render('home.ejs', {
-        currentUser: req.session.currentUser
-    })
+    res.redirect('/recipes')
+    //  {
+    //     currentUser: req.session.currentUser
+    // })
 })
 
 
