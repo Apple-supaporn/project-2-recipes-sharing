@@ -1,17 +1,19 @@
 <header>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jura&family=Kanit:wght@200&family=Open+Sans:wght@400;700&family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jura&family=Kanit:wght@200&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&family=Righteous&display=swap" rel="stylesheet">
     <!-- <h1 class="header-websitename">SpiceMe</h1> -->
     <ul class="header-list">
         <% if (currentUser) { %>
         <li>Welcome <%= currentUser.username %></li>
         <li>
             <form action="/sessions?_method=DELETE" method="POST">
-                <input type="submit" value="Log Out">
+                <input type="submit" value="Log out">
             </form>
         </li>
         <% } else { %>
         <li><a href="/sessions/new">Log in </a></li>
         <li><a href="/users/new">Sign up </a></li>
         <% } %>
-        <li><a href="/recipes/new">Create new Recipe</a></li>
+        <li><a href="/recipes/new">Create New Recipe</a></li>
     </ul>
 </header>

@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <link rel="stylesheet" href="/styles.css">
+    <title>SpiceMe | Log in</title>
 </head>
 <body>
     <%- include('../partials/header.ejs') %>
-    <h1>Log in</h1>
-    <form action="/sessions" method="POST">
-        username: <input required type="text" name="username"><br>
-        Password: <input required type="text" name="password"><br>
-        <input type="submit" value="Login">
-    </form>
-    <nav>
-        <a href="/recipes">Back to Recipes Index</a>
-    </nav>
+    <div class="login-card">
+        <div class="login-column">
+            <h1>Log in</h1>
+            <form action="/sessions" method="POST">
+                username: <br><input required type="text" name="username"><br>
+                Password: <br><input required type="text" name="password"><br><br>
+                <input type="submit" value="Login">
+            </form>
+            <nav>
+                <br><a href="/users/new">Need to sign up?</a>
+                <br><a href="/recipes">Back to Recipes Index</a>
+            </nav>
+        </div>
+    </div>
 </body>
 </html>

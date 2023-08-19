@@ -3,38 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Recipe</title>
+    <link rel="stylesheet" href="/styles.css">
+    <title>SpiceMe | Create New Recipe</title>
 </head>
 <body>
     <%- include('./partials/header') %>
-    <h1>New Recipe Page</h1>
-    <form action="/recipes" method="POST">
-        Recipe Title: <input required type="text" name="title"><br>
-        Cuisine Type: <input required type="text" name="cuisine_type"><br>
-        Description: <textarea rows="5" cols="40" required type="text" name="description"></textarea><br>
-        Prep Time: <input required type="text" name="prep_time"> mins<br>
-        Cook Time: <input required type="text" name="cook_time"> mins<br>
-        Total Time: <input required type="text" name="total_time"> mins<br>
-        
-        <!-- Servings Input -->
-        Servings: <input required type="number" name="servings_amount">
-        <select name="servings_type">
-            <option value="people">People</option>
-            <option value="bars">Bars</option>
-            <option value="pieces">Pieces</option>
-            <!-- Add more options as needed -->
-        </select><br>
-
-
-
-        Ingredients: <textarea rows="5" cols="40" required type="text" name="ingredients"></textarea><br>
-        Instructions: <textarea rows="5" cols="40" required type="text" name="instructions"></textarea><br>
-        Photo: <textarea rows="5" cols="40" type="text" name="img"></textarea><br>
-        <input type="submit" value="Create Recipe"><br>
-        <nav>
-            <a href="/recipes">Back to Recipes Index</a>
-        </nav>
-    </form>
-
+    <div class="create-new-recipe-page">
+    <div class="create-new-recipe-card">
+        <div class="create-new-recipe-column">
+            <h1>Create New Recipe</h1>
+            <form action="/recipes" method="POST">
+                Recipe Title: <textarea rows="6" cols="75" required name="title"></textarea><br><br>
+                Cuisine Type: <textarea rows="6" cols="75" required name="cuisine_type"></textarea><br><br>
+                Description: <textarea rows="6" cols="75" required name="description"></textarea><br><br>
+                Prep Time: <textarea rows="1" cols="75" required name="prep_time"></textarea><br><br>
+                Cook Time: <textarea rows="1" cols="75" required name="cook_time"></textarea><br><br>
+                Total Time: <textarea rows="1" cols="75" required name="total_time"></textarea><br><br>
+                Servings: <textarea rows="1" cols="75" required name="servings_amount"></textarea><br><br>
+                Ingredients: <textarea rows="6" cols="75" required name="ingredients"></textarea><br><br>
+                Instructions: <textarea rows="6" cols="75" required name="instructions"></textarea><br><br>
+                Photo: <textarea rows="6" cols="75" required name="img"></textarea><br><br>
+                <input type="submit" value="Create New Recipe"><br><br>
+            
+                <nav>
+                <a href="/recipes">Back to Recipes Index</a>
+                </nav>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>
