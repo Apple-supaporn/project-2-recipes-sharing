@@ -2,13 +2,11 @@
 SpiceMe is a Full-stack CRUD Recipe Sharing Application where users not only read, but create, update, and delete their own recipes from scratch or customize existing ones. Users can share their delicious dishes, and each recipe can be shared by multiple users.
 
 ## Screenshot
-Entity Relationship Diagram (ERD)
-<img src="/assets/images/erd-recipes.png" alt="ERD-recipes-sharing" width="635" height="480">
-
-wireframe
-<img src="/assets/images/wf-recipes1.png" alt="wireframe1-recipes-sharing" width="635" height="480">
-<img src="/assets/images/wf-recipes2.png" alt="wireframe2-recipes-sharing" width="635" height="480">
-<img src="/assets/images/wf-recipes3.png" alt="wireframe3-recipes-sharing" width="635" height="480">
+Entity Relationship Diagram (ERD) and Wireframes
+<img src="/assets/images/erd-recipes.png" alt="ERD-recipes-sharing" width="700" height="850">
+<img src="/assets/images/wf-recipes1.png" alt="wireframe1-recipes-sharing" width="700" height="600">
+<img src="/assets/images/wf-recipes2.png" alt="wireframe2-recipes-sharing" width="700" height="600">
+<img src="/assets/images/wf-recipes3.png" alt="wireframe3-recipes-sharing" width="700" height="600">
 
 ## Technologies Used
 - Node
