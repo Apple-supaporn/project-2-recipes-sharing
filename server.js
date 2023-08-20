@@ -19,7 +19,7 @@ const sessionsController = require('./controllers/sessions')
 app.use(express.json())
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended:true}))
-app.use(express.static('public'));
+app.use(express.static('public'))
 app.use(
     session({
         secret: process.env.SECRET,

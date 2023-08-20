@@ -8,33 +8,36 @@
 </head>
 <body>
     <%- include('./partials/header') %>
+
     <div class="recipe-showpage-container">
         <div class="recipe-showpage-card">
             <div class="recipe-showpage-column"><br>
+                
+                <!-- check if the logged in user(currectUser) is the owner of the recipe, if so show the edit and delete buttons -->
+                <% if (currentUser && recipe.owner && recipe.owner.equals(currentUser._id)) { %> 
+                    <!-- EDIT FORM  -->
+                    <a href="/recipes/<%= recipe.id %>/edit">Edit Recipe</a>
+                
+                    <!-- DELETE FORM -->
+                    <form id="delete-form" action="/recipes/<%= recipe.id %>?_method=DELETE" method="POST">
+                        <input type="hidden" name="recipeId" value="<%= recipe.id %>">
+                        <!-- <input type="submit" value="DELETE THIS RECIPE"> -->
+                    </form>
 
-                <!-- EDIT FORM  -->
-                <a href="/recipes/<%= recipe.id %>/edit">Edit Recipe</a>
-
-
-                <!-- DELETE FORM -->
-            <form id="delete-form" action="/recipes/<%= recipe.id %>?_method=DELETE" method="POST">
-                <input type="hidden" name="recipeId" value="<%= recipe.id %>">
-                <!-- <input type="submit" value="DELETE THIS RECIPE"> -->
-            </form>
-
-            <button id="delete-button">DELETE THIS RECIPE</button>
-
-            <!-- Pop-up -->
-            <div class="popup-overlay" id="popup-overlay">
-                <div class="popup-content">
-                    <p>Are you sure you want to delete this recipe?</p>
-                    <div class="popup-buttons">
-                        <button onclick="deleteRecipe();">Confirm</button>
-                        <button onclick="closePopup();">Cancel</button>
+                    <button id="delete-button">DELETE THIS RECIPE</button>
+                    <!-- Popup for delete -->
+                    <div class="popup-overlay" id="popup-overlay">
+                        <div class="popup-content">
+                            <p>Are you sure you want to delete this recipe?</p>
+                            <div class="popup-buttons">
+                                <button onclick="deleteRecipe();">Confirm</button>
+                                <button onclick="closePopup();">Cancel</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                <% } %>
 
+                <!-- Recipe Details -->
                 <img class="recipe-showpage-image" src="<%= recipe.img %>" alt="<%= recipe.title %>"><br>
                 <h2><%= recipe.title %><br></h2>
                 <%= recipe.description %><br><br>
@@ -44,28 +47,28 @@
                 Total Time: <%= recipe.total_time %><br>
                 Servings: <%= recipe.servings_amount %><br><br>
                 Ingredients: <%= recipe.ingredients %><br><br>
-                Instructions: <%= recipe.instructions %><br><br><br>
+                Instructions: <%= recipe.instructions %><br><br>
+
+                <!-- Show Owner username -->
+                Created by: <%= recipe.owner.username %><br><br>
+
                 <a href="/recipes">Back to Recipes Index</a>
             </div>
         </div>
     </div>
-
     <script>
         function showPopup() {
-            document.getElementById('popup-overlay').style.display = 'flex';
+            document.getElementById('popup-overlay').style.display = 'flex'
         }
-    
         function closePopup() {
-            document.getElementById('popup-overlay').style.display = 'none';
+            document.getElementById('popup-overlay').style.display = 'none'
         }
-    
         function deleteRecipe() {
-            document.getElementById('delete-form').submit();
+            document.getElementById('delete-form').submit()
         }
-    
         document.getElementById('delete-button').addEventListener('click', function() {
-            showPopup();
-        });
+            showPopup()
+        })
     </script>
 </body>
 </html>

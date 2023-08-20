@@ -28,8 +28,6 @@ router.post('/', async (req, res) => {
 })
 
 
-
-
 router.delete('/', (req, res) => {
     req.session.destroy(() => {
         res.redirect('/recipes')

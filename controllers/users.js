@@ -4,7 +4,6 @@ const User = require('../models/users')
 
 
 //INDUCES
-
 //INDEX
 router.get('/new', (req, res) => {
     res.render('users/new.ejs', {
@@ -15,9 +14,12 @@ router.get('/new', (req, res) => {
 
 //NEW
 
+
 //DELETE
 
+
 //UPDATE
+
 
 //CREATE
 router.post('/', async (req, res) => {
@@ -26,8 +28,11 @@ router.post('/', async (req, res) => {
     res.redirect('/')
 })
 
+
 //EDIT
 
+
 //SHOW
+
 
 module.exports = router
