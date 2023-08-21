@@ -15,7 +15,7 @@ const isAuthenticated = (req, res, next) => {
 //INDUCES
 //INDEX
 router.get('/', async (req, res) => {
-    const foundRecipes = await Recipe.find({})
+    const foundRecipes = await Recipe.find({}).sort({createdAt: -1}) //.sort({createdAt: -1}) is the newest items will appear first
     //console.log(foundRecipes)
     res.render('index.ejs', {
         recipes: foundRecipes,
