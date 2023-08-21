@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
-    <title>Recipe Index</title>
+    <title>SpiceMe | Recipes Sharing</title>
 </head>
 <body>
     <%- include('./partials/header') %>
-    <h1> All Recipes </h1>
+    <div class="recipe-allrecipes"> All Recipes </div>
     <ul class="recipe-list">
         <% for(let i = 0; i < recipes.length; i++) { %>
             <li class="recipe-item">
@@ -20,8 +20,12 @@
                         <div class="recipe-title">
                             <%=recipes[i].title %>
                         </div>
-                        <div class="cuisine-type">
-                            <%=recipes[i].cuisine_type %>
+                        <div class="recipe-description">
+                            <!-- .substring(0,117) for break words  -->
+                            <%= recipes[i].description.substring(0,117) %>
+                        </div>
+                        <div class="recipe-owner">
+                            Created by: <%= recipes[i].owner.username %>
                         </div>
                     </div>
                 </a>
