@@ -8,27 +8,37 @@ h1 {
 }
 .header-websitename {
     color: rgb(60, 60, 60);
-    font-size: 40px;
+    font-size: 55px;
     text-align: center;
     margin-bottom: 20px;
+    font-family: 'Pattaya', sans-serif;
 }
+.header-websitename a {
+    text-decoration: none;
+    color: rgb(60, 60, 60);
+}
+
+.new1-line {
+    border: none;
+    border-top: 1px solid rgb(235, 235, 235);
+    margin: 10px 0;
+}
+
 
 /* INDEX PAGE */
 .recipe-allrecipes {
     text-align: left;
-    /* 20px 10px = top,left */
-    margin: 20px 20px;
+    margin: 30px 30px;
     font-size: 30px;
-    text-align: center;
 }
 
 .recipe-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1px;
     list-style: none;
     padding: 0;
-    margin-right: 10px;
+    margin-right: 0px;
 }
 
 .recipe-item {
@@ -39,6 +49,8 @@ h1 {
     position: relative;
     overflow: hidden;
     height: auto;
+    margin: 0px 10px;
+    margin-bottom: 20px;
 }
 
 .recipe-item a {
@@ -47,7 +59,7 @@ h1 {
 }
 
 .recipe-image img {
-    width: 223px;
+    width: 262px;
     height: 275px;
     object-fit: cover;
 }
@@ -73,6 +85,14 @@ h1 {
     font-family: 'PT Serif', serif;
 }
 
+.search-recipe-description {
+    color: rgb(60, 60, 60);
+    font-size: 15px;
+    padding: 5px 0px;
+    word-break: break-word;
+    font-family: 'PT Serif', serif;
+}
+
 .recipe-owner {
     font-size: 13px;
     color: rgb(60, 60, 60);
@@ -82,11 +102,16 @@ h1 {
 
 /* HEADER */
 header {
-    background-color: rgb(225, 225, 225);
-    /* border: 1px solid rgb(0, 93, 122); */
     padding: 1% 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'PT Serif', serif;
     font-weight: 700;
+    margin: 0px 10px;
+    font-size: 18px;
+}
+
+.header-welcome {
+    margin-left: 10px;
+    padding-right: 15px;
 }
 
 .header-list {
@@ -106,10 +131,18 @@ header {
     color: rgb(63, 63, 63);
 }
 
-.header-logout {
-   margin-left: auto !important;
+.header-list a:hover {
+    color: darkcyan;
 }
 
+
+.header-logout {
+   margin-left: auto;
+}
+
+.header-search-bar {
+    margin-left: auto;
+}
 
 .edit-recipe-page, .create-new-recipe-page {
     display: flex;
@@ -117,6 +150,7 @@ header {
     align-items: center;
     height: -10vh;
 }
+
 
 .login-card, .sign-up-card {
     background-color: #f3f3f3;
@@ -154,27 +188,26 @@ header {
 
 /* SHOW PAGE */
 .recipe-showpage-card {
-    background-color: #f3f3f3;
-    border-radius: 0px;
-    display: flex;
+    background-color: #fdfdfd;
+    border: 1px solid rgb(244, 244, 244);
     padding: 50px;
     text-align: left;
-    width: 80em;
-    justify-content: flex-start;
-    align-items: flex-start;
+    width: 50em;
     margin-top: 25px;
     margin-left: 20px;
 }
 .recipe-showpage-column {
-    padding: 0 5px;
+    padding: 0px 0px;
+    white-space:pre-line;
 }
 
 .recipe-showpage-image {
-    max-width: 30%; 
+    max-width: 50%; 
     max-height: auto; 
     object-fit: contain;
     display: block;
-    margin: 0 auto;
+    margin: auto;
+    padding-bottom: 20px;
 }
 .recipe-showpage-container {
     display: flex;
@@ -207,4 +240,46 @@ header {
 
 .popup-buttons {
     margin-top: 15px;
+}
+
+#delete-button {
+    background-color: #c9c9c9;
+    border: none;
+    color: rgb(63, 63, 63);
+    padding: 5px 16px;
+    /* display: inline-block; */
+    text-align: center;
+    font-size: 16px;
+    margin: 4px;
+    cursor: pointer;
+    font-family: 'PT Serif', serif;
+    font-weight: bold;    
+    margin-left: auto;
+    float: right;
+}
+#edit-form {
+    background-color: #c9c9c9;
+    border: none;
+    color: rgb(63, 63, 63);
+    padding: 5px 25px;
+    /* display: inline-block; */
+    text-align: center;
+    font-size: 16px;
+    margin: 4px;
+    cursor: pointer;
+    font-family: 'PT Serif', serif;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: auto;
+    float: right;
+}
+#delete-button:hover, #edit-form:hover {
+    background-color: darkcyan;
+    color: lightgray;
+  }
+
+.bold-text {
+font-weight: bold;
+display: inline;
+margin-right: 5px;
 }

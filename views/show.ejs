@@ -11,20 +11,18 @@
 
     <div class="recipe-showpage-container">
         <div class="recipe-showpage-card">
-            <div class="recipe-showpage-column"><br>
-                
                 <!-- check if the logged in user(currectUser) is the owner of the recipe, if so show the edit and delete buttons -->
                 <% if (currentUser && recipe.owner && recipe.owner.equals(currentUser._id)) { %> 
+
                     <!-- EDIT FORM  -->
-                    <a href="/recipes/<%= recipe.id %>/edit">Edit Recipe</a>
+                    <a id="edit-form" href="/recipes/<%= recipe.id %>/edit">Edit this recipe</a><br><br>
                 
                     <!-- DELETE FORM -->
                     <form id="delete-form" action="/recipes/<%= recipe.id %>?_method=DELETE" method="POST">
                         <input type="hidden" name="recipeId" value="<%= recipe.id %>">
-                        <!-- <input type="submit" value="DELETE THIS RECIPE"> -->
                     </form>
+                        <button id="delete-button" type="submit">Delete this recipe</button> 
 
-                    <button id="delete-button">DELETE THIS RECIPE</button>
                     <!-- Popup for delete -->
                     <div class="popup-overlay" id="popup-overlay">
                         <div class="popup-content">
@@ -37,22 +35,24 @@
                     </div>
                 <% } %>
 
+                <div class="recipe-showpage-column"><br>
+                    
                 <!-- Recipe Details -->
                 <img class="recipe-showpage-image" src="<%= recipe.img %>" alt="<%= recipe.title %>"><br>
-                <h2><%= recipe.title %><br></h2>
-                <%= recipe.description %><br><br>
-                Cuisine Type: <%= recipe.cuisine_type %><br>
-                Prep Time: <%= recipe.prep_time %><br>
-                Cook Time: <%= recipe.cook_time %><br>
-                Total Time: <%= recipe.total_time %><br>
-                Servings: <%= recipe.servings_amount %><br><br>
-                Ingredients: <%= recipe.ingredients %><br><br>
-                Instructions: <%= recipe.instructions %><br><br>
+                <h2><%= recipe.title %></h2>
+                <%= recipe.description %><br>
+                <p class="bold-text">Cuisine Type:</p><%= recipe.cuisine_type %>
+                <p class="bold-text">Prep Time:</p><%= recipe.prep_time %>
+                <p class="bold-text">Cook Time:</p> <%= recipe.cook_time %>
+                <p class="bold-text">Total Time:</p> <%= recipe.total_time %>
+                <p class="bold-text">Servings:</p> <%= recipe.servings_amount %><br>
+                <p class="bold-text">Ingredients:</p> <br><%= recipe.ingredients %><br>
+                <p class="bold-text">Instructions:</p> <br><%= recipe.instructions %>
 
                 <!-- Show Owner username -->
-                Created by: <%= recipe.owner.username %><br><br>
+                <p class="bold-text">Created by:</p> <%= recipe.owner.username %>
 
-                <a href="/recipes">Back to Recipes Index</a>
+                <a href="/recipes">Back to Homepage</a>
             </div>
         </div>
     </div>

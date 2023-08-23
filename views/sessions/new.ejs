@@ -11,14 +11,22 @@
     <div class="login-card">
         <div class="login-column">
             <h1>Log in</h1>
+
             <form action="/sessions" method="POST">
-                username: <br><input required type="text" name="username"><br>
-                Password: <br><input required type="text" name="password"><br><br>
+                Username: <br><input required type="text" name="username"><br>
+                Password: <br><input required type="password" name="password"><br><br>
                 <input type="submit" value="Login">
             </form>
+            
+            <% if (message) { %>
+                <div class="message">
+                    <p><%= message %> <a href="/sessions/new"> </a></p>
+                </div>
+            <% } %>
+
             <nav>
                 <br><a href="/users/new">Need to sign up?</a>
-                <br><a href="/recipes">Back to Recipes Index</a>
+                <br><a href="/recipes">Back to Homepage</a>
             </nav>
         </div>
     </div>

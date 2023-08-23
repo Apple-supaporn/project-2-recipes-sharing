@@ -8,17 +8,25 @@
 </head>
 <body>
     <%- include('../partials/header') %>
-
     <div class="sign-up-card">
         <div class="sign-up-column">
             <h1>Sign up</h1>
+            
             <form action="/users" method="POST">
                 Username: <br><input required type="text" name="username"><br>
                 Password: <br><input required type="password" name="password"><br><br>
                 <input type="submit" value="Sign up">
             </form>
+
+            <div class="message">
+                <% if (message) { %>
+                    <p><%= message %> <a href="/sessions/new"> log in </a></p>
+                <% } %>
+            </div>
+
             <nav>
-                <br><a href="/recipes">Back to Recipes Index</a>
+                <br>Already have an account? <a href="/sessions/new">Log in</a>
+                <br><a href="/recipes">Back to Homepage</a>
             </nav>
         </div>
     </div>

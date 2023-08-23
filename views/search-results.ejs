@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Search Results</title>
+</head>
+<body>
+    <%- include('./partials/header') %>
+    
+    <h1 class="search-results-title">Search results for "<%= searchQuery %>"</h1>
+    
+    <ul class="recipe-list">
+        <% for (const recipe of recipes) { %>
+            <li class="recipe-item">
+                <a href="/recipes/<%= recipe._id %>">
+                    <div class="recipe-image">
+                        <img src="<%= recipe.img %>">
+                    </div>
+                    <div class="recipe-details">
+                        <h2 class="recipe-title"><%= recipe.title %></h2>
+                        <p class="search-recipe-description"><%= recipe.description.substring(0,117) %></p>
+                        <p class="owner">Created by: <%= recipe.owner.username %> </p>
+                    </div>
+                </a>
+            </li>
+        <% } %>
+    </ul>
+</body>
+</html>
