@@ -6,9 +6,8 @@
         <hr class="new1-line">
     </div>
     <ul class="header-list">
-
         <% if (currentUser) { %>
-            
+            <!-- Display welcome message and navigation links for logged-in user -->
             <div class="header-welcome">Welcome <%= currentUser.username %></div>
             <li><a href="/recipes/">Home</a></li>
             <li><a href="/recipes/new">Create New Recipe</a></li>
@@ -18,16 +17,16 @@
                 </form>
             </li>
         <% } else { %>
+            <!-- Display navigation links for non logged-in user -->
             <li><a href="/recipes/">Home</a></li>
             <li><a href="/recipes/new">Create New Recipe</a></li>
-            <li><a href="/sessions/new">Log in </a></li>
+            <li><a href="/sessions/new">Login </a></li>
             <li><a href="/users/new">Sign up </a></li>
         <% } %>
-
+        <!-- Search bar -->
         <form class="header-search-bar" action="/recipes/search" method="GET">
             <input type="text" name="search" placeholder="Search recipe">
             <button type="submit">Search</button>
         </form>
-
     </ul>
 </header>

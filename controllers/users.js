@@ -3,58 +3,36 @@ const bcrypt = require('bcrypt')
 const User = require('../models/users')
 
 
-//INDUCES
-//INDEX
-// router.get('/new', (req, res) => {
-//     res.render('users/new.ejs', {
-//         currentUser: req.session.currentUser
-//     })
-// })
+//render the sign up page
 router.get('/new', (req, res) => {
-    res.render('users/new.ejs', {
-        currentUser: req.session.currentUser,
-        message: null
-    })
+    try {
+        res.render('users/new.ejs', {
+            currentUser: req.session.currentUser,
+            message: null
+        })
+    } catch (error) {
+        console.error(error)
+        res.send('Oops! Something went wrong. Please try again.')
+    }
 })
 
 
-//NEW
-
-
-//DELETE
-
-
-//UPDATE
-
-
-//CREATE
-// router.post('/', async (req, res) => {
-//     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
-//     const newUser = await User.create(req.body)
-//     res.redirect('/')
-// })
+//handle user sign up
 router.post('/', async (req, res) => {
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
     try {
         const newUser = await User.create(req.body)
         res.render('users/new.ejs', {
             currentUser: req.session.currentUser,
-            message: 'Sign up successful! You can now '
+            message: 'Sign up successful! You can now <a href="/sessions/new">login.</a>'
         })
     } catch (error) {
-        //console.log(error)
         res.render('users/new.ejs', {
             currentUser: req.session.currentUser,
-            message: 'Oops! Something went wrong. Please try again.'
+            message: 'This username is already taken. Please pick a different username.'
         })
     }
 })
-
-
-//EDIT
-
-
-//SHOW
 
 
 module.exports = router

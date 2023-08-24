@@ -9,6 +9,7 @@
 <body>
     <%- include('./partials/header') %>
     <div class="recipe-allrecipes"> All Recipes </div>
+    <!-- List of recipes -->
     <ul class="recipe-list">
         <% for(let i = 0; i < recipes.length; i++) { %>
             <li class="recipe-item">
@@ -21,7 +22,6 @@
                             <%=recipes[i].title %>
                         </div>
                         <div class="recipe-description">
-                            <!-- .substring(0,117) for break words  -->
                             <%= recipes[i].description.substring(0,117) %>
                         </div>
                         <div class="recipe-owner">

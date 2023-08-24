@@ -16,7 +16,6 @@ const isAuthenticated = (req, res, next) => {
 router.get('/', async (req, res) => {
     try {
         const foundRecipes = await Recipe.find({}).sort({createdAt: -1}).populate('owner') //.sort({createdAt: -1}) is the newest items will appear first
-        //console.log(foundRecipes)
         res.render('index.ejs', {
             recipes: foundRecipes,
             currentUser: req.session.currentUser
@@ -55,7 +54,6 @@ router.delete('/:id', isAuthenticated, async (req, res) => {
 router.put('/:id', async (req, res) => {
     try { 
         const updatedRecipe = await Recipe.findByIdAndUpdate(req.params.id, req.body, {new:true})
-        console.log(updatedRecipe)
         res.redirect(`/recipes/${req.params.id}`)
     } catch(error) {
         console.error(error)
@@ -100,7 +98,7 @@ router.get('/search', async (req, res) => {
     try {
         const foundRecipes = await Recipe.find({
             $or: [  //use $or for search across multiple fields
-                { title: { $regex: searchQuery, $options: 'i' } }, //$regex = provides regular expression capabilities for pattern matching strings in queries
+                { title: { $regex: searchQuery, $options: 'i' } }, //$regex = helps search for specific patterns in text, like finding words.
                 { description: { $regex: searchQuery, $options: 'i' } },
                 { cuisine_type: { $regex: searchQuery, $options: 'i' } },
                 { ingredients: { $regex: searchQuery, $options: 'i' } }

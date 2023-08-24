@@ -1,11 +1,14 @@
 body {
-    background-color: white;
+    background-color: rgb(255, 250, 247);
     font-family: 'PT Serif', serif;
     color: rgb(63, 63, 63);
 }
+
 h1 {
     text-align: center;
 }
+
+/* HEADER */
 .header-websitename {
     color: rgb(60, 60, 60);
     font-size: 55px;
@@ -13,17 +16,61 @@ h1 {
     margin-bottom: 20px;
     font-family: 'Pattaya', sans-serif;
 }
+
 .header-websitename a {
     text-decoration: none;
-    color: rgb(60, 60, 60);
+    color: rgb(255, 112, 55);
 }
 
 .new1-line {
     border: none;
-    border-top: 1px solid rgb(235, 235, 235);
+    border-top: 2px solid rgb(235, 235, 235);
     margin: 10px 0;
 }
 
+header {
+    padding: 1% 0;
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    margin: 0px 10px;
+    font-size: 18px;
+    background-color: white;
+}
+
+.header-welcome {
+    margin-left: 10px;
+    padding-right: 15px;
+    color: rgb(255, 112, 55);
+}
+
+.header-list {
+    display: flex;
+    justify-content: start;
+    list-style: none;
+    padding: 0;
+    margin: 0 10px;
+}
+
+.header-list li {
+    margin: 0 10px;
+}
+
+.header-list a {
+    text-decoration: none;
+    color: rgb(63, 63, 63);
+}
+
+.header-list a:hover {
+    color: rgb(255, 112, 55);
+}
+
+.header-logout {
+   margin-left: auto;
+}
+
+.header-search-bar {
+    margin-left: auto;
+}
 
 /* INDEX PAGE */
 .recipe-allrecipes {
@@ -100,60 +147,9 @@ h1 {
     font-family: 'PT Serif', serif;
 }
 
-/* HEADER */
-header {
-    padding: 1% 0;
-    font-family: 'PT Serif', serif;
-    font-weight: 700;
-    margin: 0px 10px;
-    font-size: 18px;
-}
-
-.header-welcome {
-    margin-left: 10px;
-    padding-right: 15px;
-}
-
-.header-list {
-    display: flex;
-    justify-content: start;
-    list-style: none;
-    padding: 0;
-    margin: 0 10px;
-}
-
-.header-list li {
-    margin: 0 10px;
-}
-
-.header-list a {
-    text-decoration: none;
-    color: rgb(63, 63, 63);
-}
-
-.header-list a:hover {
-    color: darkcyan;
-}
-
-
-.header-logout {
-   margin-left: auto;
-}
-
-.header-search-bar {
-    margin-left: auto;
-}
-
-.edit-recipe-page, .create-new-recipe-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: -10vh;
-}
-
-
+/* LOGIN & SIGN UP FORM */
 .login-card, .sign-up-card {
-    background-color: #f3f3f3;
+    background-color: rgb(255, 231, 220);
     box-shadow: 0 10px 50px -30px black;
     border-radius: 30px;
     display: flex;
@@ -173,8 +169,16 @@ header {
     text-align: left;
 }
 
+/* EDIT & CREATE RECIPE FORM */
+.edit-recipe-page, .create-new-recipe-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: -10vh;
+}
+
 .create-new-recipe-card, .edit-recipe-card {
-    background-color: #f3f3f3;
+    background-color: rgb(255, 231, 220);
     border-radius: 15px;
     display: flex;
     padding: 40px;
@@ -186,9 +190,30 @@ header {
     margin-left: 20px;
 }
 
+/* EDIT FORM */
+#edit-form {
+    background-color: #c9c9c9;
+    border: none;
+    color: rgb(63, 63, 63);
+    padding: 5px 25px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px;
+    cursor: pointer;
+    font-family: 'PT Serif', serif;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: auto;
+    float: right;
+}
+
 /* SHOW PAGE */
+.recipe-showpage-body {
+    background-color:rgb(255, 250, 247);
+}
+
 .recipe-showpage-card {
-    background-color: #fdfdfd;
+    background-color: white;
     border: 1px solid rgb(244, 244, 244);
     padding: 50px;
     text-align: left;
@@ -196,6 +221,7 @@ header {
     margin-top: 25px;
     margin-left: 20px;
 }
+
 .recipe-showpage-column {
     padding: 0px 0px;
     white-space:pre-line;
@@ -209,6 +235,7 @@ header {
     margin: auto;
     padding-bottom: 20px;
 }
+
 .recipe-showpage-container {
     display: flex;
     justify-content: center;
@@ -216,15 +243,25 @@ header {
     height: -10vh;
 }
 
-/* Delete popup */
+#delete-button:hover, #edit-form:hover {
+    background-color: rgb(255, 112, 55);
+    color: white
+  }
+
+.recipe-showpage-bold-text {
+    font-weight: bold;
+    display: inline;
+    margin-right: 5px;
+    }
+
+/* DELETE POPUP */
 .popup-overlay {
     display: none;
-    position: fixed;
+    position:fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -234,12 +271,8 @@ header {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
-}
-
-.popup-buttons {
-    margin-top: 15px;
 }
 
 #delete-button {
@@ -247,7 +280,6 @@ header {
     border: none;
     color: rgb(63, 63, 63);
     padding: 5px 16px;
-    /* display: inline-block; */
     text-align: center;
     font-size: 16px;
     margin: 4px;
@@ -256,30 +288,4 @@ header {
     font-weight: bold;    
     margin-left: auto;
     float: right;
-}
-#edit-form {
-    background-color: #c9c9c9;
-    border: none;
-    color: rgb(63, 63, 63);
-    padding: 5px 25px;
-    /* display: inline-block; */
-    text-align: center;
-    font-size: 16px;
-    margin: 4px;
-    cursor: pointer;
-    font-family: 'PT Serif', serif;
-    font-weight: bold;
-    text-decoration: none;
-    margin-left: auto;
-    float: right;
-}
-#delete-button:hover, #edit-form:hover {
-    background-color: darkcyan;
-    color: lightgray;
-  }
-
-.bold-text {
-font-weight: bold;
-display: inline;
-margin-right: 5px;
 }

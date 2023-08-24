@@ -12,20 +12,26 @@
         <div class="sign-up-column">
             <h1>Sign up</h1>
             
+            <!-- Sign up form -->
             <form action="/users" method="POST">
                 Username: <br><input required type="text" name="username"><br>
                 Password: <br><input required type="password" name="password"><br><br>
                 <input type="submit" value="Sign up">
             </form>
 
+            <!-- Display message from user.js-->
             <div class="message">
                 <% if (message) { %>
-                    <p><%= message %> <a href="/sessions/new"> log in </a></p>
+                    <p><%- message %></p>
                 <% } %>
+                <!-- use <%-  %> if you want to add link like this message 
+                    'Sign up successful! You can now <a href="/sessions/new">login</a>' 
+                    it will add link for "login" -->
             </div>
 
+            <!-- Nevigation links -->
             <nav>
-                <br>Already have an account? <a href="/sessions/new">Log in</a>
+                <br>Already have an account? <a href="/sessions/new">Login</a>
                 <br><a href="/recipes">Back to Homepage</a>
             </nav>
         </div>

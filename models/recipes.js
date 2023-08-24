@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+//define the structure of recipe
 const recipeSchema = new mongoose.Schema({
     title: { type: String, required: true },
     cuisine_type: { type: String, required: true },
@@ -18,11 +19,9 @@ const recipeSchema = new mongoose.Schema({
         ref: 'User',    //reference to the 'User' model in users.js
         required: true
     }
-
 }, {timestamps: true})
 
+//create the Recipe model based on the schema
 const Recipe = mongoose.model('Recipe', recipeSchema)
-
-
 
 module.exports = Recipe

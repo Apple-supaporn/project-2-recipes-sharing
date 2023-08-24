@@ -9,9 +9,9 @@ Entity Relationship Diagram (ERD) and Wireframes
 <img src="/assets/images/wf-recipes3.png" alt="wireframe3-recipes-sharing" width="700" height="500">
 
 ## Technologies Used
-- Node
+- Node.js
 - Express
-- MongoDB
+- MongoDB/Mongoose
 - HTML
 - CSS
 - JavaScript
