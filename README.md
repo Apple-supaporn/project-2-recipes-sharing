@@ -3,10 +3,10 @@ SpiceMe is a Full-stack CRUD recipes-sharing application where users not only re
 
 ## Screenshot
 Entity Relationship Diagram (ERD) and Wireframes
-<img src="/assets/images/erd-recipes.png" alt="ERD-recipes-sharing" width="700" height="750">
-<img src="/assets/images/wf-recipes1.png" alt="wireframe1-recipes-sharing" width="700" height="500">
-<img src="/assets/images/wf-recipes2.png" alt="wireframe2-recipes-sharing" width="700" height="500">
-<img src="/assets/images/wf-recipes3.png" alt="wireframe3-recipes-sharing" width="700" height="500">
+<img src="/assets/images/erd-recipes.png" alt="ERD-recipes-sharing" width="700" height="710">
+<img src="/assets/images/wf-recipes1.png" alt="wireframe1-recipes-sharing" width="700" height="450">
+<img src="/assets/images/wf-recipes2.png" alt="wireframe2-recipes-sharing" width="700" height="450">
+<img src="/assets/images/wf-recipes3.png" alt="wireframe3-recipes-sharing" width="700" height="490">
 
 ## Technologies Used
 - Node.js
