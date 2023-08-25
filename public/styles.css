@@ -64,9 +64,9 @@ header {
     color: rgb(255, 112, 55);
 }
 
-/* .header-logout {
+.header-logout {
    margin-left: auto;
-} */
+}
 
 .header-search-bar {
     margin-left: auto;

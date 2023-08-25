@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>SpiceMe | Login</title>
-</head>
 <body>
     <%- include('../partials/header.ejs') %>
+
+    <title>SpiceMe | Login</title>
+
     <div class="login-card">
         <div class="login-column">
             <h1>Login</h1>
@@ -12,7 +12,8 @@
             <!-- Login form -->
             <form action="/sessions" method="POST">
                 Username: <br><input required type="text" name="username"><br>
-                Password: <br><input required type="password" name="password"><br><br>
+                Password: <br><input required type="password" name="password" id="myInput"><br>
+                <input type="checkbox" onclick="togglePassword()">Show password<br><br>
                 <input type="submit" value="Login">
             </form>
             
@@ -30,5 +31,17 @@
             </nav>
         </div>
     </div>
+
+    <!-- Script to Toggle Password Visibility -->
+    <script>
+        function togglePassword() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
 </body>
 </html>
