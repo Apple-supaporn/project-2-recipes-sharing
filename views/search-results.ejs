@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles.css">
-    <title>Search Results</title>
-</head>
 <body>
     <%- include('./partials/header') %>
+
+    <title>Search Results</title>
+
     <h1 class="search-results-title">Search results for "<%= searchQuery %>"</h1>
+    
     <!-- List of recipes -->
     <ul class="recipe-list">
         <% for (const recipe of recipes) { %>

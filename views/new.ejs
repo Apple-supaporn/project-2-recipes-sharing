@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles.css">
-    <title>SpiceMe | Create New Recipe</title>
-</head>
 <body>
     <%- include('./partials/header') %>
+
+    <title>SpiceMe | Create New Recipe</title>
+
     <div class="create-new-recipe-page">
         <div class="create-new-recipe-card">
             <div class="create-new-recipe-column">
@@ -26,7 +23,7 @@
                     Instructions: <textarea rows="6" cols="75" required name="instructions"></textarea><br><br>
                     Photo: <textarea rows="6" cols="75" required name="img"></textarea><br><br>
                     <input type="submit" value="Create New Recipe"><br><br>
-            
+                    
                     <!-- Navigation link -->
                     <nav>
                     <a href="/recipes">Back to Homepage</a>

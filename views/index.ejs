@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles.css">
-    <title>SpiceMe | Recipes Sharing</title>
-</head>
 <body>
     <%- include('./partials/header') %>
+    
+    <title>SpiceMe | Recipes Sharing</title>
+
     <div class="recipe-allrecipes"> All Recipes </div>
+    
     <!-- List of recipes -->
     <ul class="recipe-list">
         <% for(let i = 0; i < recipes.length; i++) { %>

@@ -1,77 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles.css">
-    <title>SpiceMe | Recipe Details</title>
-</head>
 <body>
-    <div class="recipe-showpage-body">
     <%- include('./partials/header') %>
 
-    <div class="recipe-showpage-container">
-        <div class="recipe-showpage-card">
-                <!-- check if the logged in user(currectUser) is the owner of the recipe, if so show the edit and delete buttons -->
-                <% if (currentUser && recipe.owner && recipe.owner.equals(currentUser._id)) { %> 
+    <title>SpiceMe | Recipe Details</title>
 
-                    <!-- Edit form  -->
-                    <a id="edit-form" href="/recipes/<%= recipe.id %>/edit">Edit this recipe</a><br><br>
+    <div class="recipe-showpage-body">
+        <div class="recipe-showpage-container">
+            <div class="recipe-showpage-card">
+
+                    <!-- check if the logged in user(currectUser) is the owner of the recipe, if so show the edit and delete buttons -->
+                    <% if (currentUser && recipe.owner && recipe.owner.equals(currentUser._id)) { %> 
+
+                        <!-- Edit form  -->
+                        <a id="edit-form" href="/recipes/<%= recipe.id %>/edit">Edit this recipe</a><br><br>
                 
-                    <!-- Delete form -->
-                    <form id="delete-form" action="/recipes/<%= recipe.id %>?_method=DELETE" method="POST">
-                        <input type="hidden" name="recipeId" value="<%= recipe.id %>">
-                    </form>
-                    <button id="delete-button" type="submit">Delete this recipe</button> 
+                        <!-- Delete form -->
+                        <form id="delete-form" action="/recipes/<%= recipe.id %>?_method=DELETE" method="POST">
+                            <input type="hidden" name="recipeId" value="<%= recipe.id %>">
+                        </form>
+                        <button id="delete-button" type="submit">Delete this recipe</button> 
 
-                    <!-- Popup for delete -->
-                    <div class="popup-overlay" id="popup-overlay">
-                        <div class="popup-content">
-                            <p>Are you sure you want to delete this recipe?</p>
-                            <div class="popup-buttons">
-                                <button onclick="deleteRecipe();">Confirm</button>
-                                <button onclick="closePopup();">Cancel</button>
+                        <!-- Popup for delete -->
+                        <div class="popup-overlay" id="popup-overlay">
+                            <div class="popup-content">
+                                <p>Are you sure you want to delete this recipe?</p>
+                                <div class="popup-buttons">
+                                    <button onclick="deleteRecipe();">Confirm</button>
+                                    <button onclick="closePopup();">Cancel</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <% } %>
+                    <% } %>
 
-                <!-- Recipe Details -->
-                <div class="recipe-showpage-column"><br>
-                <img class="recipe-showpage-image" src="<%= recipe.img %>" alt="<%= recipe.title %>"><br>
-                <h2><%= recipe.title %></h2>
-                <%= recipe.description %><br>
-                <p class="recipe-showpage-bold-text">Cuisine Type:</p><%= recipe.cuisine_type %>
-                <p class="recipe-showpage-bold-text">Prep Time:</p><%= recipe.prep_time %>
-                <p class="recipe-showpage-bold-text">Cook Time:</p> <%= recipe.cook_time %>
-                <p class="recipe-showpage-bold-text">Total Time:</p> <%= recipe.total_time %>
-                <p class="recipe-showpage-bold-text">Servings:</p> <%= recipe.servings_amount %><br>
-                <p class="recipe-showpage-bold-text">Ingredients:</p> <br><%= recipe.ingredients %><br>
-                <p class="recipe-showpage-bold-text">Instructions:</p> <br><%= recipe.instructions %>
+                    <!-- Recipe Details -->
+                    <div class="recipe-showpage-column"><br>
+                    <img class="recipe-showpage-image" src="<%= recipe.img %>" alt="<%= recipe.title %>"><br>
+                    <h2><%= recipe.title %></h2>
+                    <%= recipe.description %><br>
+                    <p class="recipe-showpage-bold-text">Cuisine Type:</p><%= recipe.cuisine_type %>
+                    <p class="recipe-showpage-bold-text">Prep Time:</p><%= recipe.prep_time %>
+                    <p class="recipe-showpage-bold-text">Cook Time:</p> <%= recipe.cook_time %>
+                    <p class="recipe-showpage-bold-text">Total Time:</p> <%= recipe.total_time %>
+                    <p class="recipe-showpage-bold-text">Servings:</p> <%= recipe.servings_amount %><br>
+                    <p class="recipe-showpage-bold-text">Ingredients:</p> <br><%= recipe.ingredients %><br>
+                    <p class="recipe-showpage-bold-text">Instructions:</p> <br><%= recipe.instructions %>
 
-                <!-- Show owner username -->
-                <p class="recipe-showpage-bold-text">Created by:</p> <%= recipe.owner.username %>
+                    <!-- Show owner username -->
+                    <p class="recipe-showpage-bold-text">Created by:</p> <%= recipe.owner.username %>
 
-                <!-- Back to Homepage link -->
-                <a href="/recipes">Back to Homepage</a>
+                    <!-- Back to Homepage link -->
+                    <a href="/recipes">Back to Homepage</a>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Script to handle delete popup -->
-    <script>
-        function showPopup() {
-            document.getElementById('popup-overlay').style.display = 'flex' //function to display delete popup
-        }
-        function closePopup() {
-            document.getElementById('popup-overlay').style.display = 'none' //function to hide the delete popup when button cancel is clicked
-        }
-        function deleteRecipe() {
-            document.getElementById('delete-form').submit() //function submit the delete form when confirm button is clicked
-        }
-        document.getElementById('delete-button').addEventListener('click', function() { //add event listener to the delete button to show popup when clicked
-            showPopup()
-        })
-    </script>
+        
+        <!-- Script to handle delete popup -->
+        <script>
+            function showPopup() {
+                document.getElementById('popup-overlay').style.display = 'flex' //function to display delete popup
+            }
+            function closePopup() {
+                document.getElementById('popup-overlay').style.display = 'none' //function to hide the delete popup when button cancel is clicked
+            }
+            function deleteRecipe() {
+                document.getElementById('delete-form').submit() //function submit the delete form when confirm button is clicked
+            }
+            document.getElementById('delete-button').addEventListener('click', function() { //add event listener to the delete button to show popup when clicked
+                showPopup()
+            })
+        </script>
     </div>
 </body>
 </html>
