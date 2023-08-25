@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt')
 const User = require('../models/users')
 
 
-//render the sign up page
+//Render the sign up page
 router.get('/new', (req, res) => {
     try {
         res.render('users/new.ejs', {
@@ -17,7 +17,7 @@ router.get('/new', (req, res) => {
 })
 
 
-//handle user sign up
+//Handle user sign up
 router.post('/', async (req, res) => {
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
     try {

@@ -8,6 +8,11 @@ h1 {
     text-align: center;
 }
 
+textarea {
+    font-size: 14px;
+    font-family: 'PT Serif', serif;
+}
+
 /* HEADER */
 .header-websitename {
     color: rgb(60, 60, 60);
@@ -58,6 +63,7 @@ header {
 .header-list a {
     text-decoration: none;
     color: rgb(63, 63, 63);
+    /* font-size: 14px; */
 }
 
 .header-list a:hover {
@@ -312,9 +318,14 @@ header {
         margin-bottom: 5%;
     }
 
+    .header-list a {
+        font-size: 14px;
+    }
+
     .header-welcome {
         padding-bottom: 10px;
-        font-size: 15px;
+        font-size: 14px;
+        font-weight: bolder;
     }
 
     .login-card, .sign-up-card {
@@ -374,11 +385,25 @@ header {
         margin: 4px;
         margin-top: -20px;
     }
+
+    .login-column, .sign-up-column {
+        margin-top: -50px;
+    }
+    
 }
 
 @media (max-width: 900px) {
     .login-card, .sign-up-card {
         width: auto;
     }
+
+    .header-list {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin-bottom: 10px;
+        text-align: center; 
+    }
+
 
 }

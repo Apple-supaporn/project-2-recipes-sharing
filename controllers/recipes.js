@@ -3,6 +3,7 @@ const router = express.Router()
 const Recipe = require('../models/recipes')
 
 
+//Check if user is authenticated/login
 const isAuthenticated = (req, res, next) => {
     if (req.session.currentUser) {
         return next()
@@ -12,6 +13,7 @@ const isAuthenticated = (req, res, next) => {
 }
 
 
+//INDUCES
 //INDEX
 router.get('/', async (req, res) => {
     try {
