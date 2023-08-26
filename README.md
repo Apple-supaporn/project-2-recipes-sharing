@@ -38,5 +38,6 @@ Explore the world of flavors and share your culinary passion with others. Happy 
 - Users can save recipes for easy future access.
 - Users can comment on recipes to ask questions or share experiences.
 - Users can see when a recipe is created or updated for track freshness.
+- Add an 'Upload Photo' button so that users can upload a photo of their recipe from their personal device.
 
 Your contributions and ideas are always welcome!
